@@ -5,92 +5,100 @@
   <title>CBK Creations – Service Request</title>
   <link rel="icon" href="/static/logo.png" />
   <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to bottom right, #e3f2fd, #bbdefb);
-      min-height: 100vh;
-      padding: 2rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    * {
+      box-sizing: border-box;
     }
 
-    .container {
-      background: white;
-      border-radius: 10px;
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f4f8;
       padding: 2rem;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-      max-width: 600px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .wrapper {
       width: 100%;
+      max-width: 900px;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .card {
+      background: #ffffff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     }
 
     img.logo {
       display: block;
-      margin: 0 auto 1rem;
+      margin: auto;
       height: 80px;
-    }
-
-    form h2 {
-      text-align: center;
       margin-bottom: 1rem;
     }
 
-    input, select, textarea {
+    h2, h3 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 1rem;
+    }
+
+    form input, form select, form textarea {
       width: 100%;
-      padding: 0.75rem;
       margin: 0.5rem 0;
-      border-radius: 6px;
+      padding: 0.75rem;
       border: 1px solid #ccc;
+      border-radius: 8px;
       font-size: 1rem;
     }
 
-    button {
-      width: 100%;
-      background-color: #1976d2;
+    form button {
+      background: #1976d2;
       color: white;
       border: none;
       padding: 0.8rem;
+      width: 100%;
       font-size: 1rem;
-      border-radius: 6px;
+      border-radius: 8px;
       cursor: pointer;
-      margin-top: 0.5rem;
+      margin-top: 1rem;
     }
 
-    button:hover {
-      background-color: #0d47a1;
+    form button:hover {
+      background: #0d47a1;
     }
 
     table {
       width: 100%;
-      margin-top: 2rem;
       border-collapse: collapse;
-      background: #ffffff;
-      border-radius: 6px;
-      overflow: hidden;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      margin-top: 1rem;
+      font-size: 0.95rem;
     }
 
     th, td {
-      border: 1px solid #e0e0e0;
       padding: 0.75rem;
+      border: 1px solid #ddd;
       text-align: center;
-    }
-
-    h3 {
-      margin-top: 2rem;
-      text-align: center;
-      color: #333;
     }
 
     ul {
       list-style: none;
-      text-align: center;
       padding: 0;
+      text-align: center;
     }
 
     ul li {
       margin: 0.5rem 0;
+    }
+
+    footer {
+      text-align: center;
+      color: #555;
+      font-weight: bold;
+      margin-top: 1rem;
     }
 
     a {
@@ -101,58 +109,56 @@
     a:hover {
       text-decoration: underline;
     }
-
-    footer {
-      text-align: center;
-      margin-top: 2rem;
-      color: #444;
-      font-weight: bold;
-    }
   </style>
 </head>
 <body>
 
-  <div class="container">
-    <img src="/static/logo.png" class="logo" alt="CBK Creations Logo" />
-    
-    <form id="serviceForm">
-      <h2>Request a Service</h2>
-      <input name="name" placeholder="Your Name" required />
-      <input name="phone" placeholder="Phone Number" required />
-      <input name="email" type="email" placeholder="Email" required />
-      <select name="service" required>
-        <option value="">Select a Service</option>
-        <option value="resume">Resume Writing</option>
-        <option value="infographic">Infographic</option>
-        <option value="market">Market Research Report</option>
-        <option value="docking">Molecular Docking Report</option>
-        <option value="ai_guide">AI Tools Guide</option>
-        <option value="combo">Combo Pack</option>
-      </select>
-      <textarea name="details" placeholder="Describe your request (optional)"></textarea>
-      <button type="submit">Submit</button>
-      <p id="responseMsg"></p>
-    </form>
+  <div class="wrapper">
+    <div class="card">
+      <img src="/static/logo.png" class="logo" alt="CBK Creations Logo" />
 
-    <h3>Pricing</h3>
-    <table>
-      <tr><th>Service</th><th>Price (INR)</th></tr>
-      <tr><td>Resume Writing</td><td>₹99</td></tr>
-      <tr><td>Infographic</td><td>₹99</td></tr>
-      <tr><td>Market Research Report</td><td>₹99</td></tr>
-      <tr><td>Molecular Docking Report</td><td>₹99</td></tr>
-      <tr><td>AI Tools Guide</td><td>₹99</td></tr>
-      <tr><td>Combo Pack (All 5)</td><td>₹199</td></tr>
-    </table>
+      <form id="serviceForm">
+        <h2>Request a Service</h2>
+        <input name="name" placeholder="Your Name" required />
+        <input name="phone" placeholder="Phone Number" required />
+        <input name="email" type="email" placeholder="Email" required />
+        <select name="service" required>
+          <option value="">Select a Service</option>
+          <option value="resume">Resume Writing</option>
+          <option value="infographic">Infographic</option>
+          <option value="market">Market Research Report</option>
+          <option value="docking">Molecular Docking Report</option>
+          <option value="ai_guide">AI Tools Guide</option>
+          <option value="combo">Combo Pack</option>
+        </select>
+        <textarea name="details" placeholder="Describe your request (optional)"></textarea>
+        <button type="submit">Submit</button>
+        <p id="responseMsg" style="text-align:center; margin-top:1rem;"></p>
+      </form>
+    </div>
 
-    <h3>Contact</h3>
-    <ul>
-      <li>Email: <a href="mailto:prudhviworkspace@gmail.com">prudhviworkspace@gmail.com</a></li>
-      <li>WhatsApp: <a href="https://wa.me/917416203048" target="_blank">Chat on WhatsApp</a></li>
-      <li>LinkedIn: <a href="https://www.linkedin.com/in/prudhvi30" target="_blank">Visit LinkedIn</a></li>
-    </ul>
+    <div class="card">
+      <h3>Pricing</h3>
+      <table>
+        <tr><th>Service</th><th>Price (INR)</th></tr>
+        <tr><td>Resume Writing</td><td>₹99</td></tr>
+        <tr><td>Infographic</td><td>₹99</td></tr>
+        <tr><td>Market Research Report</td><td>₹99</td></tr>
+        <tr><td>Molecular Docking Report</td><td>₹99</td></tr>
+        <tr><td>AI Tools Guide</td><td>₹99</td></tr>
+        <tr><td>Combo Pack (All 5)</td><td>₹199</td></tr>
+      </table>
+    </div>
 
-    <footer>🧠 Smart Work with Smart Tools</footer>
+    <div class="card">
+      <h3>Contact</h3>
+      <ul>
+        <li>Email: <a href="mailto:prudhviworkspace@gmail.com">prudhviworkspace@gmail.com</a></li>
+        <li>WhatsApp: <a href="https://wa.me/917416203048" target="_blank">Chat on WhatsApp</a></li>
+        <li>LinkedIn: <a href="https://www.linkedin.com/in/prudhvi30" target="_blank">Visit LinkedIn</a></li>
+      </ul>
+      <footer>🧠 Smart Work with Smart Tools</footer>
+    </div>
   </div>
 
   <script>
