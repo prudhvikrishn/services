@@ -2,172 +2,99 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>My Solutions | Request a Service</title>
-  <link rel="icon" href="logo.png" />
+  <title>CBK Creations – Service Request</title>
+  <link rel="icon" href="/static/logo.png" />
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #4f46e5, #ec4899, #f97316);
-      background-size: 400% 400%;
-      animation: gradientBG 15s ease infinite;
-      margin: 0;
-      padding: 0;
-      color: #fff;
-    }
-
-    @keyframes gradientBG {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    .container {
-      max-width: 600px;
-      margin: 2rem auto;
-      background: rgba(0,0,0,0.6);
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
       padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.2);
     }
-
-    .logo {
-      display: block;
+    form {
+      max-width: 550px;
       margin: auto;
-      width: 120px;
+      background: white;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
     }
-
-    h1 {
-      text-align: center;
-      margin-bottom: 1rem;
-    }
-
-    form input, form select, form textarea {
+    input, select, textarea {
       width: 100%;
+      margin: 0.5rem 0;
       padding: 0.7rem;
-      margin-top: 0.5rem;
-      border: none;
-      border-radius: 8px;
-      font-size: 1rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
     }
-
     button {
-      margin-top: 1rem;
-      background: #10b981;
+      background: #0066cc;
       color: white;
       border: none;
-      padding: 0.8rem 1.5rem;
-      border-radius: 8px;
-      font-size: 1rem;
+      padding: 0.8rem 1.2rem;
+      border-radius: 6px;
       cursor: pointer;
     }
-
     button:hover {
-      background: #059669;
+      background: #004b99;
     }
-
-    .response {
-      text-align: center;
-      margin-top: 1rem;
+    img.logo {
+      display: block;
+      margin: auto;
+      height: 80px;
+      margin-bottom: 1rem;
     }
-
-    .section {
-      margin: 3rem auto;
-      max-width: 700px;
-      padding: 1rem;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 1rem;
-    }
-
-    th, td {
-      padding: 0.8rem;
-      border: 1px solid #ccc;
-      text-align: center;
-      background-color: rgba(255, 255, 255, 0.1);
-    }
-
-    h3 {
-      margin-top: 2rem;
-    }
-
-    a {
-      color: #fcd34d;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
   </style>
 </head>
 <body>
 
-  <div class="container">
-    <img src="logo.png" alt="My Solutions Logo" class="logo" />
-    <h1>My Solutions – Smart Work with Smart Tools</h1>
+  <img src="/static/logo.png" class="logo" alt="CBK Creations Logo" />
 
-    <form id="serviceForm">
-      <input name="name" placeholder="Your Name" required />
-      <input name="phone" placeholder="Phone Number" required />
-      <input name="email" type="email" placeholder="Email" required />
-      <select name="service" required>
-        <option value="">Select a Service</option>
-        <option value="resume">Resume Writing</option>
-        <option value="infographic">Infographic</option>
-        <option value="market">Market Research Report</option>
-        <option value="docking">Molecular Docking Report</option>
-        <option value="ai_guide">AI Tools Guide</option>
-        <option value="combo">Combo Pack (All 5)</option>
-      </select>
-      <textarea name="details" placeholder="Describe your request (optional)"></textarea>
-      <button type="submit">Submit</button>
-      <p class="response" id="responseMsg"></p>
-    </form>
-  </div>
+  <form id="serviceForm">
+    <h2>Request a Service</h2>
+    <input name="name" placeholder="Your Name" required />
+    <input name="phone" placeholder="Phone Number" required />
+    <input name="email" type="email" placeholder="Email" required />
+    <select name="service" required>
+      <option value="">Select a Service</option>
+      <option value="resume">Resume Writing</option>
+      <option value="infographic">Infographic</option>
+      <option value="market">Market Research Report</option>
+      <option value="docking">Molecular Docking Report</option>
+      <option value="ai_guide">AI Tools Guide</option>
+      <option value="combo">Combo Pack</option>
+    </select>
+    <textarea name="details" placeholder="Describe your request (optional)"></textarea>
+    <button type="submit">Submit</button>
+    <p id="responseMsg" style="margin-top: 1rem;"></p>
+  </form>
 
-  <div class="section">
-    <h3>💡 What You’ll Get</h3>
-    <ul>
-      <li><strong>📝 Resume Writing:</strong> Tailored resume for students or jobseekers with optimized formatting.</li>
-      <li><strong>🎨 Infographic:</strong> LinkedIn-ready visual posters using Canva + AI tools.</li>
-      <li><strong>📊 Market Research Report:</strong> AI-based trend analysis with charts and insights.</li>
-      <li><strong>🧬 Molecular Docking Report:</strong> Ligand-protein interaction analysis with clear visuals.</li>
-      <li><strong>🤖 AI Tools Guide:</strong> 10+ curated free tools to improve productivity & learning.</li>
-      <li><strong>🔥 Combo Pack:</strong> All of the above at a discounted rate!</li>
-    </ul>
+  <h3 style="text-align:center; margin-top:2rem;">Pricing</h3>
+  <table border="1" style="width:100%; border-collapse: collapse; text-align: center;">
+    <tr><th>Service</th><th>Price (INR)</th></tr>
+    <tr><td>Resume Writing</td><td>₹99</td></tr>
+    <tr><td>Infographic</td><td>₹99</td></tr>
+    <tr><td>Market Research Report</td><td>₹99</td></tr>
+    <tr><td>Molecular Docking Report</td><td>₹99</td></tr>
+    <tr><td>AI Tools Guide</td><td>₹99</td></tr>
+    <tr><td>Combo Pack (All 5)</td><td>₹199</td></tr>
+  </table>
 
-    <h3>💰 Pricing</h3>
-    <table>
-      <tr><th>Service</th><th>Price (INR)</th></tr>
-      <tr><td>Resume Writing</td><td>₹99</td></tr>
-      <tr><td>Infographic</td><td>₹99</td></tr>
-      <tr><td>Market Research Report</td><td>₹99</td></tr>
-      <tr><td>Molecular Docking Report</td><td>₹99</td></tr>
-      <tr><td>AI Tools Guide</td><td>₹99</td></tr>
-      <tr><td><strong>Combo Pack (All)</strong></td><td><strong>₹399</strong></td></tr>
-    </table>
+  <h3 style="text-align:center;">Contact</h3>
+  <ul style="text-align:center; list-style: none; padding: 0;">
+    <li>Email: <a href="mailto:prudhviworkspace@gmail.com">prudhviworkspace@gmail.com</a></li>
+    <li>WhatsApp: <a href="https://wa.me/917416203048" target="_blank">Chat on WhatsApp</a></li>
+    <li>LinkedIn: <a href="https://www.linkedin.com/in/prudhvi30" target="_blank">Visit LinkedIn</a></li>
+  </ul>
 
-    <h3>📞 Contact Me</h3>
-    <ul>
-      <li>Email: <a href="mailto:prudhviworkspace@gmail.com">prudhviworkspace@gmail.com</a></li>
-      <li>WhatsApp: <a href="https://wa.me/917416203048" target="_blank">Message on WhatsApp</a></li>
-      <li>LinkedIn: <a href="https://www.linkedin.com/in/prudhvi30" target="_blank">Visit LinkedIn</a></li>
-    </ul>
-  </div>
+  <p style="text-align:center; margin-top:2rem;">🧠 <strong>Smart Work with Smart Tools</strong></p>
 
   <script>
     const form = document.getElementById('serviceForm');
     const msg = document.getElementById('responseMsg');
-
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const formData = new FormData(form);
       const jsonData = {};
-      formData.forEach((value, key) => jsonData[key] = value);
+      formData.forEach((value, key) => { jsonData[key] = value; });
 
       try {
         const res = await fetch('/submit', {
@@ -176,13 +103,12 @@
           body: JSON.stringify(jsonData)
         });
         const result = await res.json();
-        msg.textContent = result.message || 'Submitted!';
+        msg.textContent = result.message || result.error || 'Something went wrong';
         form.reset();
       } catch (err) {
-        msg.textContent = 'Error submitting form. Try again!';
+        msg.textContent = 'Error connecting to server';
       }
     });
   </script>
-
 </body>
 </html>
